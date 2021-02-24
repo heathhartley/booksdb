@@ -59,8 +59,12 @@ namespace booksdb
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                   "Books/{page}",
+                   new { Controller = "Home", action = "Index" });
+
+
+                endpoints.MapDefaultControllerRoute();
             });
             Seedata.EnsurePopulated(app);//make sure it is populated 
         }

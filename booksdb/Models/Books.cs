@@ -30,6 +30,8 @@ namespace booksdb.Models
         public string Classification { get; set; } //atomic
         [Required]
         public double Price { get; set; }
+        [Required]
+        public int PageNum { get; set; }
 
     }
 }

@@ -9,8 +9,8 @@ using booksdb.Models;
 namespace booksdb.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20210217234437_Initial")]
-    partial class Initial
+    [Migration("20210223215559_booksdb")]
+    partial class booksdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,6 +50,9 @@ namespace booksdb.Migrations
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PageNum")
+                        .HasColumnType("int");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");

@@ -36,7 +36,8 @@ namespace booksdb.Models
                         Classification = "Fiction",
                         Category = "Classic",
                         Price = 9.95,
-                        
+                        PageNum = 1488
+
 
                     },
                      new Books
@@ -51,6 +52,7 @@ namespace booksdb.Models
                          Classification = "Non-Fiction",
                          Category = "Biograghy",
                          Price = 14.58,
+                         PageNum = 944
 
 
                      },
@@ -66,6 +68,7 @@ namespace booksdb.Models
                           Classification = "Non-Fiction",
                           Category = "Biograghy",
                           Price = 21.54,
+                          PageNum = 832
 
 
                       },
@@ -82,6 +85,8 @@ namespace booksdb.Models
                            Category = "Biograghy",
                            Price = 11.61,
 
+                           PageNum = 864
+
 
                        },
                        new Books
@@ -97,6 +102,7 @@ namespace booksdb.Models
 
                            Category = "Biograghy",
                            Price = 13.33,
+                           PageNum = 528
 
 
                        },
@@ -112,6 +118,7 @@ namespace booksdb.Models
                             Classification = "Fiction",
                             Category = "Historical Fiction",
                             Price = 15.95,
+                            PageNum = 288
 
 
                         },
@@ -126,6 +133,7 @@ namespace booksdb.Models
                              Category = "Self-Help",
                              Classification = "Non-Fiction",
                              Price = 14.99,
+                             PageNum = 304
 
 
                          },
@@ -141,6 +149,7 @@ namespace booksdb.Models
                               Classification = "Non-Fiction",
                               Category = "Self-Help",
                               Price = 21.66,
+                              PageNum = 240
 
 
                           },
@@ -156,6 +165,7 @@ namespace booksdb.Models
                                Classification = "Non-Fiction",
                                Category = "Business",
                                Price = 29.16,
+                               PageNum = 400
 
 
                            },
@@ -171,6 +181,51 @@ namespace booksdb.Models
                                 Classification = "Fiction",
                                 Category = "Thrillers",
                                 Price = 15.03,
+                                PageNum = 642
+
+                            },
+                            new Books
+                            {
+
+                                Title = "Book of Mormon",
+                                AuthorFirst = "Joseph",
+                                AuthorMiddle = "",
+                                AuthorLast = "Smith",
+                                Publisher = "The Church of Jesus Christ of Latter-day Saints",
+                                ISBN = "978 - 1502349613",
+                                Classification = "Non-Fiction",
+                                Category = "Gospel",
+                                Price = 00.00,
+                                PageNum = 531
+
+                            },
+                            new Books
+                            {
+
+                                Title = "Twilight",
+                                AuthorFirst = "Stephenie",
+                                AuthorMiddle = "",
+                                AuthorLast = "Meyer",
+                                Publisher = "Little, Brown and Company",
+                                ISBN = "978-0316038379",
+                                Classification = "Fantasy",
+                                Category = "Romance",
+                                Price = 10.48,
+                                PageNum = 498
+
+                            }, new Books
+                            {
+
+                                Title = "Harry Potter and the Sorcerer's Stone",
+                                AuthorFirst = "J.K",
+                                AuthorMiddle = "",
+                                AuthorLast = "Rowling",
+                                Publisher = "Scholastic Corporation",
+                                ISBN = "978-0590353427",
+                                Classification = "Fiction",
+                                Category = "Classic",
+                                Price = 6.98,
+                                PageNum = 309
 
                             }
 
