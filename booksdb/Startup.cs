@@ -61,7 +61,7 @@ namespace booksdb
                 endpoints.MapControllerRoute(
                    /*change how the url looks*/
                     "pagination",
-                   "Books/{page}",
+                   "Books/P{page}",
                    new { Controller = "Home", action = "Index" });
 
 
