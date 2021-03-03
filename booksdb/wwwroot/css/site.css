@@ -79,26 +79,48 @@ p
     text-align: center;
 }
 
-a:link {
+.footer a:link {
     color: green;
     background-color: transparent;
     text-decoration: none;
 }
 
-a:visited {
-    color: red;
+.footer a:visited {
+    color: #059a6c;
     background-color: transparent;
     text-decoration: none;
 }
 
-a:hover {
+.footer a:hover {
     color: black;
     background-color: transparent;
     text-decoration: underline;
 }
 
-a:active {
+.footer a:active {
     color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.color:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+.color:visited {
+    color: #059a6c;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.color:hover {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.color:active {
+    color: gray;
     background-color: transparent;
     text-decoration: underline;
 }

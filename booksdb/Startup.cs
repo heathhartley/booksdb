@@ -58,6 +58,20 @@ namespace booksdb
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" }
+                    );
+
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" }
+                    );
+                endpoints.MapControllerRoute("category",
+                    "{Category}",
+                    new { Controller = "Home", action = "Index", page = 1 }
+                    );
+
                 endpoints.MapControllerRoute(
                    /*change how the url looks*/
                     "pagination",

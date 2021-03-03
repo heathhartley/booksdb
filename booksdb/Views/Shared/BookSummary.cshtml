@@ -1,0 +1,26 @@
+﻿@model Books
+
+
+<tr>
+    <th scope="row">#@Model.BookId</th>
+
+    @*add secret message to book id 5*@
+    @if (Model.BookId == 5)
+    {
+        <th scope="row"><a href="#" data-toggle="tooltip" title="This is the best book :)">@Model.Title</a></th>
+    }
+    else
+    {
+        <td>@Model.Title</td>
+    }
+
+
+    <td>@Model.AuthorFirst @Model.AuthorMiddle @Model.AuthorLast</td>
+    <td>@Model.Publisher</td>
+    <td>@Model.ISBN</td>
+    <td>@Model.Classification</td>
+    <td>@Model.Category</td>
+    <td>$@Model.Price</td>
+    <td>@Model.PageNum</td>
+
+</tr>
