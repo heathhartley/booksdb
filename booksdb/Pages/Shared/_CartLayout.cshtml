@@ -1,15 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@*this is the cart page layout*@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Database</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    @*<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">*@
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -32,10 +29,9 @@
                     </ul>
                 </div>
             </div>
-            <vc:cart-summary />
         </nav>
     </header>
-    
+  
     <div class="container">
         <div class="container">
             <div class="row ">
@@ -51,18 +47,15 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col"><vc:navagation-menu-view-components /></div>
-        <div class="col">
+   
+
+    <div class="text-center">
 
 
-
-
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-    </div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>  
 
     <footer class="border-top footer text-muted">
         <div class="container">

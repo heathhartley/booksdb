@@ -24,18 +24,18 @@ namespace booksdb.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(string category, int page=1)
+        public IActionResult Index(string category, int pageNum=1)
         {
             return View(new BookListViewModel
             {
                 Books = _repository.Books
                 .Where(b => category == null || b.Category == category)
                 .OrderBy(b => b.BookId)
-                .Skip((page - 1) * ItemsPerPage)
+                .Skip((pageNum - 1) * ItemsPerPage)
                 .Take(ItemsPerPage),
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = ItemsPerPage,
                     TotalNumItems = category == null ? _repository.Books.Count() : _repository.Books.Where(b => b.Category == category).Count()
                 },

@@ -1,6 +1,7 @@
 using booksdb.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -29,11 +30,21 @@ namespace booksdb
 
             services.AddDbContext<BookDbContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:bookproject"]);
+                options.UseSqlite(Configuration["ConnectionStrings:bookproject"]);
 
             });
 
             services.AddScoped<IBookRepository, EFBooksRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +63,8 @@ namespace booksdb
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -59,12 +72,12 @@ namespace booksdb
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("catpage",
-                    "{category}/{page:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", action = "Index" }
                     );
 
                 endpoints.MapControllerRoute("page",
-                    "{page:int}",
+                    "{pageNum:int}",
                     new { Controller = "Home", action = "Index" }
                     );
                 endpoints.MapControllerRoute("category",
@@ -75,11 +88,13 @@ namespace booksdb
                 endpoints.MapControllerRoute(
                    /*change how the url looks*/
                     "pagination",
-                   "Books/P{page}",
+                   "Books/P{pageNum}",
                    new { Controller = "Home", action = "Index" });
 
 
                 endpoints.MapDefaultControllerRoute();
+                // ad razor pages, also in configure services
+                endpoints.MapRazorPages();
             });
             Seedata.EnsurePopulated(app);//make sure it is populated 
         }
